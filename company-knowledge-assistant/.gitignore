@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtualenv
+venv/
+env/
+.venv/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
+
+# Docker
+*.env
+docker-compose.override.yml
+
+# Data and local artifacts
+data/
+init-db/
+seed/
