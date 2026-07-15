@@ -28,6 +28,7 @@ _ingest_last = {
     "error": None,
 }
 
+#Todo get category form frontend
 class Ask(BaseModel):
     question: str
 
@@ -60,8 +61,9 @@ async def ingest_status():
 @app.post("/ask") 
 async def ask(q: Ask):
     start = time.perf_counter()
+    category="guides"
 
-    answer, sources, contexts = await answer_with_docs_async(q.question)
+    answer, sources, contexts = await answer_with_docs_async(q.question,category)
 
     elapsed = time.perf_counter() - start
     print(f"⏱️ /ask execution took {elapsed:.2f} seconds")
