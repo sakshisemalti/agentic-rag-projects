@@ -57,7 +57,7 @@ async def kick_off_ingest():
 async def ingest_status():
     return {"ok": True, **_ingest_last}
 
-@app.post("/ask")
+@app.post("/ask") 
 async def ask(q: Ask):
     start = time.perf_counter()
 
