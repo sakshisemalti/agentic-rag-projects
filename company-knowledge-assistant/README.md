@@ -152,6 +152,11 @@ The project has two layers:
 │       └── style.css
 ├── agent
 │   └── streamlit_app.py      # HR Expense Compliance Agent (Streamlit UI)
+├── docs
+│   └── screenshots
+│       ├── rag-ui.png
+│       ├── agentic-ui.png
+│       └── langsmith-trace.png
 ├── data
 ├── init-db
 │   └── init.sql
@@ -195,6 +200,10 @@ When a user asks a question:
 5. GPT-4o Mini generates an answer using only the retrieved context.
 6. The API returns the answer along with the retrieved sources and contexts.
 
+**Screenshot — RAG Web UI:**
+
+![RAG UI](docs/screenshots/rag-ui.png)
+
 ---
 
 ## 3. Agentic Expense Compliance Workflow
@@ -214,6 +223,10 @@ This layer sits on top of the RAG pipeline and turns it into a tool an agent can
 4. The agent run is bounded by a recursion limit and a hard timeout, so a claim that can't converge fails visibly instead of hanging.
 5. Results — including a full per-claim tool-call trace for debugging — are displayed in the Streamlit UI.
 6. All decisions are also recorded server-side and can be inspected via `GET /decisions` on the MCP server.
+
+**Screenshot — Agentic UI (Streamlit HR Expense Agent):**
+
+![Agentic UI](docs/screenshots/agentic-ui.png)
 
 ---
 
@@ -262,6 +275,10 @@ When enabled, it records:
 - Agent tool calls (`rag_ask`, `approve`, `reject`) when the agentic layer is used
 
 This makes debugging and performance analysis much easier — including tracking down agent loops or non-converging tool calls.
+
+**Screenshot — LangSmith Trace:**
+
+![LangSmith Trace](docs/screenshots/langsmith-trace.png)
 
 ---
 
